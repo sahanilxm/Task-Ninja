@@ -2,6 +2,7 @@
 
 node_modules
 .vscode
+.angular
 
 # Compiled output
 /dist
