@@ -51,5 +51,15 @@ export const TaskReducer= createReducer(
     on(TaskActions.deleteTask, (state, task)=>{
         let tasks= state.filter((t)=>t.id!=task.id);
         return [...tasks];
-    })
+    }),
+    on(TaskActions.sortTaskByPriority, (state)=>{
+        let newTasks=[...state];
+        const sortOrder = { "High": 1, "Medium": 2, "Low": 3 };
+        newTasks.sort((a, b) => {
+            const aOrder = sortOrder[a.priority];
+            const bOrder = sortOrder[b.priority];
+            return aOrder - bOrder;
+        });
+        return [...newTasks];
+    }),
 );

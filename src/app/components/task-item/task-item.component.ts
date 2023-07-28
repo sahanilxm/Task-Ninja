@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
 import { Task} from '../../models/task';
-import { NgForm, } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import * as TaskActions from '../../store/task.actions';
 import { Store} from '@ngrx/store';
 import { TaskSelector } from 'src/app/store/task.selector';
@@ -35,7 +35,7 @@ export class TaskItemComponent {
     this.store.select(TaskSelector).subscribe((state)=> this.tasks=state)
   }
 
-  onUpdate(f){
+  onUpdate(f: NgForm){
     this.updatedTask=f.value;
     this.updatedTask={
       ...this.updatedTask,
@@ -43,7 +43,6 @@ export class TaskItemComponent {
       createdOn:this.task.createdOn
     };
     this.store.dispatch(TaskActions.editTask(this.updatedTask));
-    this.fullTask=!this.fullTask;
   }
 
   onDelete(){
