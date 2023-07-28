@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { TaskReducer } from './store/task.reducer';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({"tasks" : TaskReducer}),
     FormsModule
   ],
   providers: [],
