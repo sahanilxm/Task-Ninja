@@ -1,0 +1,9 @@
+
+<div *ngIf="tasks.length; else noTask" >
+    <div *ngFor="let task of tasks">
+        <app-task-item [task]="task"></app-task-item>
+    </div>
+</div>
+<ng-template #noTask>
+    <h1>There is no task to Print.</h1>
+</ng-template>
