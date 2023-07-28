@@ -23,4 +23,6 @@ export class TaskListComponent implements OnInit{
     this.store.select(TaskSelector).subscribe((state)=>this.tasks=state);
   }
 
+  
+
 }

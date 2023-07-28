@@ -1,5 +1,5 @@
 
-<div *ngIf="tasks.length; else noTask" >
+<div *ngIf="tasks.length; else noTask" class="mt-12">
     <div *ngFor="let task of tasks">
         <app-task-item [task]="task"></app-task-item>
     </div>

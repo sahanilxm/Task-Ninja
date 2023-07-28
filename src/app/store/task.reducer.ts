@@ -5,22 +5,25 @@ import * as TaskActions from '../store/task.actions';
 
 
 export const initialState: Task[] =[
-    // {
-    //     id: 0,
-    //     title: "ABC",
-    //     summary: '',
-    //     priority: '',
-    //     dueDate: '',
-    //     createdOn: ''
-    // },
-    // {
-    //     id: 1,
-    //     title: "XYZ",
-    //     summary: '',
-    //     priority: '',
-    //     dueDate: '',
-    //     createdOn: '',
-    // }
+    {
+        id: 0,
+        title: "Meditate",
+        summary: "Meditate in the evening, at cricket Stadium.",
+        priority: "Medium",
+        dueDate: "2023-07-13",
+        createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
+        status: "In-Progress"
+    },
+
+    {
+        id: 1,
+        title: "Meditate",
+        summary: "Meditate in the evening, at cricket Stadium.",
+        priority: "Medium",
+        dueDate: "2023-07-13",
+        createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
+        status: "Completed"
+    },
 ];
 
 export const TaskReducer= createReducer(
@@ -30,10 +33,11 @@ export const TaskReducer= createReducer(
     }),
     on(TaskActions.editTask, (state, task)=>{
         let taskIndex=state.findIndex((t)=>t.id == task.id);
+        let newTasks=[...state];
         if(taskIndex != -1){
-            state[taskIndex]=task;
+            newTasks[taskIndex]=task;
         }
-        return [...state];
+        return [...newTasks];
     }),
     on(TaskActions.deleteTask, (state, task)=>{
         let tasks= state.filter((t)=>t.id!=task.id);

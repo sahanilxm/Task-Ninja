@@ -28,7 +28,8 @@ export class CreateTaskComponent {
     this.task={
       ...this.task,
       id:this.tasks.length,
-      createdOn:this.date.toString()
+      createdOn:this.date.toString(),
+      status:"To-do"
     };
     console.log(this.task);
     this.store.dispatch(TaskActions.createTask(this.task));
