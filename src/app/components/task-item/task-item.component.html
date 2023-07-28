@@ -1,4 +1,4 @@
-<div class="flex flex-col w-5/6 md:w-2/3 lg:w-1/2 mt-2 m-auto border px-4 py-2 bg-white  border-slate-200 rounded-md text-sm shadow-sm hover:cursor-pointer hover:bg-blue-100" (click)="onView()"  *ngIf="!fullTask && !edit" >
+<div class="flex flex-col w-full mt-2 border px-4 py-2 bg-white  border-slate-200 text-sm shadow-sm hover:cursor-pointer hover:bg-pink-100" (click)="onView()"  *ngIf="!fullTask && !edit" >
     <div class="flex flex-row justify-between ">
         <div class="flex flex-row space-x-2">
             <svg *ngIf="task.status=='To-do'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-black">
@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<div class="flex flex-col w-5/6 md:w-2/3 lg:w-1/2 mt-2 m-auto border px-4 py-2 bg-white  border-slate-200 rounded-md text-sm shadow-sm " *ngIf="fullTask && !edit" >
+<div class="flex flex-col px-4 py-2 border-slate-200 rounded-md text-sm shadow-sm bg-pink-100 " *ngIf="fullTask && !edit" >
     <div >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6  font-bold hover:cursor-pointer" (click)="onView()">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
@@ -43,7 +43,7 @@
         </div>
     </div>
 </div>
-<div class="flex flex-col w-5/6 md:w-2/3 lg:w-1/2 mt-2 m-auto border px-4 py-2 bg-white  border-slate-200 rounded-md text-sm shadow-sm " *ngIf="edit" >
+<div class="flex flex-col mt-2 m-auto border px-4 py-2  border-slate-200 rounded-md text-sm shadow-sm bg-white " *ngIf="edit" >
     <div> 
         <form
         #f="ngForm" (submit)="onUpdate(f)">
