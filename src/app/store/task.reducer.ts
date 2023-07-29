@@ -5,34 +5,34 @@ import * as TaskActions from '../store/task.actions';
 
 
 export const initialState: Task[] =[
-    {
-        id: 0,
-        title: "Meditate",
-        summary: "Meditate in the evening, at cricket Stadium.",
-        priority: "Medium",
-        dueDate: "2023-07-13",
-        createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
-        status: "In-Progress"
-    },
+    // {
+    //     id: 0,
+    //     title: "Meditate",
+    //     summary: "Meditate in the evening, at cricket Stadium.",
+    //     priority: "Medium",
+    //     dueDate: "2023-07-13",
+    //     createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
+    //     status: "In-Progress"
+    // },
 
-    {
-        id: 1,
-        title: "Training",
-        summary: "Training at the Gym.",
-        priority: "High",
-        dueDate: "2023-09-13",
-        createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
-        status: "To-do"
-    },
-    {
-        id: 2,
-        title: "Runing",
-        summary: "Have to Run for 5km at 5 o'clock.",
-        priority: "Low",
-        dueDate: "2023-08-23",
-        createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
-        status: "Completed"
-    },
+    // {
+    //     id: 1,
+    //     title: "Training",
+    //     summary: "Training at the Gym.",
+    //     priority: "High",
+    //     dueDate: "2023-09-13",
+    //     createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
+    //     status: "To-do"
+    // },
+    // {
+    //     id: 2,
+    //     title: "Runing",
+    //     summary: "Have to Run for 5km at 5 o'clock.",
+    //     priority: "Low",
+    //     dueDate: "2023-08-23",
+    //     createdOn: "Fri Jul 28 2023 17:34:39 GMT+0530 (India Standard Time)",
+    //     status: "Completed"
+    // },
 ];
 
 export const TaskReducer= createReducer(

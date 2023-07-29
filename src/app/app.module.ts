@@ -10,6 +10,7 @@ import { TaskReducer } from './store/task.reducer';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { HomeComponent } from './components/home/home.component';
+import { NoTaskComponent } from './components/no-task/no-task.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './components/home/home.component';
     CreateTaskComponent,
     TaskListComponent,
     TaskItemComponent,
-    HomeComponent
+    HomeComponent,
+    NoTaskComponent
   ],
   imports: [
     BrowserModule,

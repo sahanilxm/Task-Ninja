@@ -4,6 +4,7 @@ import { Store} from '@ngrx/store';
 import * as TaskActions from '../../store/task.actions';
 import { Task} from '../../models/task';
 import { TaskSelector } from 'src/app/store/task.selector';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
@@ -16,7 +17,7 @@ export class CreateTaskComponent {
   tasks: Array<Task>;
   date= new Date();
 
-  constructor(private store: Store){}
+  constructor(private store: Store, private router: Router){}
 
   ngOnInit(){
     this.store.select(TaskSelector).subscribe((state)=> this.tasks=state)
@@ -31,7 +32,7 @@ export class CreateTaskComponent {
       createdOn:this.date.toString(),
       status:"To-do"
     };
-    console.log(this.task);
     this.store.dispatch(TaskActions.createTask(this.task));
+    this.router.navigate(['/']);
   }
 }
