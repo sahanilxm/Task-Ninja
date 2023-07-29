@@ -24,13 +24,12 @@ export class CreateTaskComponent {
   }
 
   onSubmit(f: NgForm){
-    console.log(f.value);
     this.task=f.value;
     this.task={
       ...this.task,
       id:this.tasks.length,
       createdOn:this.date.toString(),
-      status:"To-do"
+      status:"To-do",
     };
     this.store.dispatch(TaskActions.createTask(this.task));
     this.router.navigate(['/']);

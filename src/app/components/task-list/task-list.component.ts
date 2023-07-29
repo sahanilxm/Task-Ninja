@@ -21,6 +21,11 @@ export class TaskListComponent implements OnInit{
   }
 
   getTasks(){
+    const tasksData = localStorage.getItem('data');
+    if(tasksData){
+      const tasks:Task[]=JSON.parse(tasksData);
+      this.store.dispatch(TaskActions.updateTask({tasks:tasks}));  
+    }
     this.store.select(TaskSelector).subscribe((state)=>this.tasks=state);
   }
 

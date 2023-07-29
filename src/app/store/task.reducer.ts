@@ -40,6 +40,9 @@ export const TaskReducer= createReducer(
     on(TaskActions.createTask, (state, task)=>{
         return [...state, task];
     }),
+    on(TaskActions.updateTask, (_,{tasks})=>{
+        return [...tasks];
+    }),
     on(TaskActions.editTask, (state, task)=>{
         let taskIndex=state.findIndex((t)=>t.id == task.id);
         var newTasks=[...state];

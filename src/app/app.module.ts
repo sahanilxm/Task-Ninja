@@ -11,6 +11,8 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { HomeComponent } from './components/home/home.component';
 import { NoTaskComponent } from './components/no-task/no-task.component';
+import { EffectsModule } from '@ngrx/effects';
+import { DataEffects } from './store/task.effects';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { NoTaskComponent } from './components/no-task/no-task.component';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({"tasks" : TaskReducer}),
-    FormsModule
+    FormsModule,
+    EffectsModule.forRoot([DataEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

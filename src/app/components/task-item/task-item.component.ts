@@ -40,9 +40,10 @@ export class TaskItemComponent {
     this.updatedTask={
       ...this.updatedTask,
       id:this.task.id,
-      createdOn:this.task.createdOn
+      createdOn:this.task.createdOn,
     };
     this.store.dispatch(TaskActions.editTask(this.updatedTask));
+    // this.store.dispatch(TaskActions.updateTask({tasks:tasks})); 
   }
 
   onDelete(){
