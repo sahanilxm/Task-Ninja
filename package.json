@@ -21,6 +21,7 @@
     "@ngrx/effects": "^15.4.0",
     "@ngrx/store": "^15.4.0",
     "angular-csv-ext": "^1.0.5",
+    "file-saver": "^2.0.5",
     "ngx-csv": "^0.3.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

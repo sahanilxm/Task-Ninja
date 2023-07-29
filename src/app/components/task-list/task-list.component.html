@@ -26,6 +26,7 @@
                 <app-task-item [task]="task"></app-task-item>
             </div>
         </div>
+        <button title="Download Tasks" class="fixed z-90 bottom-8 left-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-4xl pb-2 font-bold" (click)="onExportToCSV()">&#8595;</button>
         <button title="Create a task" [routerLink]="['/createTask']" class="fixed z-90 bottom-8 right-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-4xl pb-2 font-bold">&#43;</button>
     </div>
     <ng-template #noTask>

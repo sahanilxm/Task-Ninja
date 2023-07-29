@@ -13,3 +13,4 @@ export const editTask= createAction('[Task] Edit Task', props<Task>());
 export const sortByDueDate= createAction('[Task] Sort Task By DueData');
 export const sortByPriority= createAction('[Task] Sort Task By Priority');
 
+export const exportToCSV = createAction('[CSV Export] Export Data',props<{ data: any[]; fileName: string }>());
