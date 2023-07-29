@@ -20,6 +20,7 @@ export class TaskItemComponent {
   updatedTask: Task;
   tasks:Task[];
   status=["to-do", "in-progress", "completed"];
+  minDate:string =new Date().toISOString().split('T')[0];
 
   onView(){
     this.fullTask= !this.fullTask;
