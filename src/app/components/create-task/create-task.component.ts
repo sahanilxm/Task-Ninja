@@ -16,6 +16,7 @@ export class CreateTaskComponent {
   task: Task;
   tasks: Array<Task>;
   date= new Date();
+  minDate:string =new Date().toISOString().split('T')[0];
 
   constructor(private store: Store, private router: Router){}
 
@@ -31,6 +32,7 @@ export class CreateTaskComponent {
       createdOn:this.date.toString(),
       status:"To-do",
     };
+    console.log(f.value,f.valid);
     this.store.dispatch(TaskActions.createTask(this.task));
     this.router.navigate(['/']);
   }

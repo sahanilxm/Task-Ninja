@@ -12,11 +12,14 @@
                     type="text" 
                     placeholder="Title" 
                     name="title" 
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
+                    class="mt-1 block w-full peer px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
                     ngModel 
                     #title="ngModel"
                     required
                 >
+                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                    Please provide a Value.
+                </p>
             </div>
             <div>
                 <br>
@@ -26,10 +29,14 @@
                 rows="10"
                 placeholder="Summary"
                 name="summary" 
-                class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
+                class="mt-1 block w-full px-3 peer py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
                 ngModel 
                 #summary="ngModel"
+                required
                 ></textarea>
+                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                    Please provide a Value.
+                </p>
             </div>
             <div>
                 <br>
@@ -37,27 +44,38 @@
                 <input 
                 type="date" 
                 name="dueDate" 
-                class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
+                class="mt-1 block peer w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
                 ngModel 
                 #dueDate="ngModel"
+                required
+                [min]="minDate"
                 >
+                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                    Please provide a Value.
+                </p>
             </div>
             <div>
                 <br>
                 <label class="block font-semibold">Priority</label>
                 <select 
                 name="priority" 
-                class="mt-1 block w-fit px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
+                class="mt-1 block peer w-fit px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" 
                 ngModel 
                 #priority="ngModel"
+                required
                 >
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
                 </select>
+                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                    Please provide a Value.
+                </p>
             </div>
             <div class="flex flex-row space-x-2 justify-end ">
-                <button type="submit" class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 hover:outline-none hover:border-sky-500  hover:ring-1 hover:ring-sky-500 w-fit text-blue-600 ">Create</button>
+                <div>
+                    <button *ngIf="f.valid" type="submit" class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 hover:outline-none hover:border-sky-500  hover:ring-1 hover:ring-sky-500 w-fit text-blue-600 ">Create</button>
+                </div>
                 <button class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 hover:outline-none hover:border-pink-500 hover:ring-1 hover:ring-pink-500 w-fit" [routerLink]="['/']">Cancel</button>
             </div>
         </form>
