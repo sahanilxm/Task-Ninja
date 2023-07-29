@@ -26,8 +26,19 @@
                 <app-task-item [task]="task"></app-task-item>
             </div>
         </div>
-        <button title="Download Tasks" class="fixed z-90 bottom-8 left-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-4xl pb-2 font-bold" (click)="onExportToCSV()">&#8595;</button>
-        <button title="Create a task" [routerLink]="['/createTask']" class="fixed z-90 bottom-8 right-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-indigo-500 text-white text-4xl pb-2 font-bold">&#43;</button>
+        
+        <div class="group">
+            <button title="Download Tasks" class="fixed z-90 bottom-8 left-8 border-0 w-12 h-12 rounded-full drop-shadow-md bg-blue-500 text-white text-3xl pb-2 font-bold" (click)="onExportToCSV()">&#8595;</button>
+            <div (click)="onExportToCSV()" class="group-hover:opacity-100 opacity-0 transition-opacity cursor-pointer">
+                <span class="fixed z-90 bottom-8 left-8 border-0 w-fit pr-3 h-12 rounded-l-full rounded-r-full drop-shadow-md bg-blue-500 text-white font-thin text-xl"><button class="w-12 font-bold text-3xl">&#8595;</button>Download Tasks</span>
+            </div>
+        </div>
+        <div class="group">
+            <button title="Download Tasks" class="fixed z-90 bottom-8 right-8 border-0 w-12 h-12 rounded-full drop-shadow-md bg-blue-500 text-white text-3xl pb-2 font-bold">&#43;</button>
+            <div class="group-hover:opacity-100 opacity-0 transition-opacity cursor-pointer" [routerLink]="['/createTask']">
+                <span class="fixed z-90 bottom-8 right-8 border-0 w-fit pr-3 h-12 rounded-l-full rounded-r-full drop-shadow-md bg-blue-500 text-white font-thin text-xl"><button class="w-12 font-bold text-3xl">&#43;</button>Create Task</span>
+            </div>
+        </div>
     </div>
     <ng-template #noTask>
         <app-no-task></app-no-task>
