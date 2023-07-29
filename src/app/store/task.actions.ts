@@ -5,6 +5,5 @@ import { Task} from '../models/task';
 export const createTask=createAction('[Task] Create Task', props<Task>());
 export const deleteTask= createAction('[Task] Delete Task', props<Task>());
 export const editTask= createAction('[Task] Edit Task', props<Task>());
-
-export const sortTaskByDueDate= createAction('[Task] Sort Task');
-export const sortTaskByPriority= createAction('[Task] Sort Task');
+export const sortByDueDate= createAction('[Task] Sort Task By DueData');
+export const sortByPriority= createAction('[Task] Sort Task By Priority');

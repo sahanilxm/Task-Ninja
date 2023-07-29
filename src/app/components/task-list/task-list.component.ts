@@ -24,10 +24,11 @@ export class TaskListComponent implements OnInit{
   }
 
   sortByPriority(){
-    this.store.dispatch(TaskActions.sortTaskByPriority());
+    this.store.dispatch(TaskActions.sortByPriority());
   }
+  
   sortByDueDate(){
-    // this.store.dispatch(TaskActions.sortTaskByDueDate());
+    this.store.dispatch(TaskActions.sortByDueDate());
   }
 
 }

@@ -1,20 +1,20 @@
-<div class="flex flex-col w-full mt-2 border px-4 py-2 bg-white  border-slate-200 text-sm shadow-sm hover:cursor-pointer hover:bg-pink-100" (click)="onView()"  *ngIf="!fullTask && !edit" >
+<div class="w-full mt-2 border px-4 py-2 bg-white  border-slate-200 text-sm shadow-sm hover:cursor-pointer hover:bg-pink-100" (click)="onView()"  *ngIf="!fullTask && !edit" >
     <div class="flex flex-row justify-between ">
         <div class="flex flex-row space-x-2">
-            <svg *ngIf="task.status=='To-do'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-black">
+            <svg *ngIf="task.status=='To-do'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-1 md:w-8 md:h-8   text-black">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>                         
-            <svg *ngIf="task.status=='In-Progress'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8  text-yellow-700">
+            <svg *ngIf="task.status=='In-Progress'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-1 md:w-8 md:h-8  text-yellow-700">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>              
-            <svg *ngIf="task.status=='Completed'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-green-600">
+            <svg *ngIf="task.status=='Completed'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-1 md:w-8 md:h-8  text-green-600">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>               
-            <h1 class="font-semibold text-xl pt-0.5" (click)="onView()">{{task.title}}</h1>
+            <h1 class="text-base md:text-xl pt-1" (click)="onView()">{{task.title}}</h1>
         </div>
-        <div class="flex flex-row space-x-2">
-            <h1 class="font-semibold text-xl pt-0.5">{{task.dueDate | date: 'dd/MM/yyyy'}}</h1>
-            <button disabled class="px-3 py-2 border w-20 text-white" [ngClass]="task.priority=='Low'?'bg-yellow-600':task.priority=='Medium'?'bg-blue-600':'bg-red-600' " >{{task.priority}}</button>
+        <div class="flex flex-row space-x-6">
+            <h1 class="text-base hidden md:flex md:text-xl pt-1">{{task.dueDate | date: 'dd/MM/yyyy'}}</h1>
+            <button disabled class=" text-xs w-12 md:text-base md:px-3 md:py-2 border md:w-20  text-white" [ngClass]="task.priority=='Low'?'bg-yellow-600':task.priority=='Medium'?'bg-blue-600':'bg-red-600' " >{{task.priority}}</button>
         </div>
     </div>
 </div>

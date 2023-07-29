@@ -42,7 +42,7 @@ export const TaskReducer= createReducer(
     }),
     on(TaskActions.editTask, (state, task)=>{
         let taskIndex=state.findIndex((t)=>t.id == task.id);
-        let newTasks=[...state];
+        var newTasks=[...state];
         if(taskIndex != -1){
             newTasks[taskIndex]=task;
         }
@@ -52,14 +52,21 @@ export const TaskReducer= createReducer(
         let tasks= state.filter((t)=>t.id!=task.id);
         return [...tasks];
     }),
-    on(TaskActions.sortTaskByPriority, (state)=>{
-        let newTasks=[...state];
+    on(TaskActions.sortByDueDate, (state)=>{
+        let newState=[...state];
+        newState.sort((a,b)=>{
+            return (new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())
+        })
+        return [...newState];
+    }),
+    on(TaskActions.sortByPriority, (state)=>{
+        let newState=[...state];
         const sortOrder = { "High": 1, "Medium": 2, "Low": 3 };
-        newTasks.sort((a, b) => {
+        newState.sort((a, b) => {
             const aOrder = sortOrder[a.priority];
             const bOrder = sortOrder[b.priority];
             return aOrder - bOrder;
         });
-        return [...newTasks];
-    }),
+        return [...newState];
+    })
 );
