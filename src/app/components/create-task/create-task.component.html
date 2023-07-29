@@ -51,14 +51,14 @@
                 ngModel 
                 #priority="ngModel"
                 >
-                    <option value="Low" selected>Low</option>
+                    <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
                 </select>
             </div>
-            <div class="flex flex-row space-x-2 justify-end">
-                <button type="submit" class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 hover:outline-none hover:border-sky-500 hover:ring-1 hover:ring-sky-500 w-fit text-blue-600 text-">Create</button>
-                <button class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 hover:outline-none hover:border-pink-500 hover:ring-1 hover:ring-pink-500 w-fit">Cancel</button>
+            <div class="flex flex-row space-x-2 justify-end ">
+                <button type="submit" class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm placeholder-slate-400 hover:outline-none hover:border-sky-500  hover:ring-1 hover:ring-sky-500 w-fit text-blue-600 ">Create</button>
+                <button class="mt-1 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 hover:outline-none hover:border-pink-500 hover:ring-1 hover:ring-pink-500 w-fit" [routerLink]="['/']">Cancel</button>
             </div>
         </form>
     </div>

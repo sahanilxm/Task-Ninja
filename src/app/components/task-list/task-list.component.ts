@@ -3,6 +3,7 @@ import { Store} from '@ngrx/store';
 import { Task} from '../../models/task';
 import { TaskSelector } from 'src/app/store/task.selector';
 import * as TaskActions from '../../store/task.actions';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -13,7 +14,7 @@ export class TaskListComponent implements OnInit{
 
   tasks:Task[];
 
-  constructor(private store: Store){}
+  constructor(private store: Store, private router: Router){}
 
   ngOnInit(): void{
     this.getTasks();

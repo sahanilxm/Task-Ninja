@@ -9,13 +9,15 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
 import { TaskReducer } from './store/task.reducer';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateTaskComponent,
     TaskListComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

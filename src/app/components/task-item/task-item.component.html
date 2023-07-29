@@ -12,9 +12,9 @@
             </svg>               
             <h1 class="text-base md:text-xl pt-1" (click)="onView()">{{task.title}}</h1>
         </div>
-        <div class="flex flex-row space-x-6">
-            <h1 class="text-base hidden md:flex md:text-xl pt-1">{{task.dueDate | date: 'dd/MM/yyyy'}}</h1>
-            <button disabled class=" text-xs w-12 md:text-base md:px-3 md:py-2 border md:w-20  text-white" [ngClass]="task.priority=='Low'?'bg-yellow-600':task.priority=='Medium'?'bg-blue-600':'bg-red-600' " >{{task.priority}}</button>
+        <div class="flex flex-row space-x-8 md:space-x-5">
+            <h1 class="text-base hidden small:flex md:text-xl pt-1">{{task.dueDate | date: 'dd/MM/yyyy'}}</h1>
+            <button disabled class="text-base px-3 py-2 border w-20  text-white" [ngClass]="task.priority=='Low'?'bg-yellow-600':task.priority=='Medium'?'bg-blue-600':'bg-red-600' " >{{task.priority}}</button>
         </div>
     </div>
 </div>
