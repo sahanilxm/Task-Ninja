@@ -46,4 +46,25 @@ export class TaskListComponent implements OnInit{
     this.store.dispatch(TaskActions.exportToCSV({ data: this.data, fileName: fileName }));
   }
 
+  sortBy(event: Event){
+    const selectedValue = (event.target as HTMLSelectElement).value;
+      switch(selectedValue){
+        case 'priority':{
+          this.store.dispatch(TaskActions.sortByPriority());
+          break;
+        }
+        case 'dueDate':{
+          this.store.dispatch(TaskActions.sortByDueDate());
+          break;
+        }
+        case 'status':{
+          this.store.dispatch(TaskActions.sortByStatus());
+          break;
+        }
+        case 'none':{
+          break;
+        }
+      }
+  }
+
 }

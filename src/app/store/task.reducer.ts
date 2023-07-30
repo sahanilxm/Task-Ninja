@@ -71,5 +71,15 @@ export const TaskReducer= createReducer(
             return aOrder - bOrder;
         });
         return [...newState];
+    }),
+    on(TaskActions.sortByStatus, (state)=>{
+        let newState=[...state];
+        const sortOrder = { "To-do": 1, "In-Progress": 2, "Completed": 3 };
+        newState.sort((a, b) => {
+            const aOrder = sortOrder[a.status];
+            const bOrder = sortOrder[b.status];
+            return aOrder - bOrder;
+        });
+        return [...newState];
     })
 );
