@@ -14,21 +14,37 @@ import { Router} from '@angular/router';
 export class CreateTaskComponent {
 
   task: Task;
-  tasks: Array<Task>;
+  tasks: Task[];
   date= new Date();
   minDate:string =new Date().toISOString().split('T')[0];
 
   constructor(private store: Store, private router: Router){}
 
   ngOnInit(){
-    this.store.select(TaskSelector).subscribe((state)=> this.tasks=state)
+    const tasksData = localStorage.getItem('data');
+    if(tasksData){
+      const tasks:Task[]=JSON.parse(tasksData);
+      this.store.dispatch(TaskActions.updateTask({tasks:tasks}));  
+    }
+    this.store.select(TaskSelector).subscribe((state)=>this.tasks=state);
   }
+
+
 
   onSubmit(f: NgForm){
     this.task=f.value;
+    let num=0;
+    for(let task of this.tasks){
+      if(num==task.id){
+        num++;
+      }
+      else{
+        break;
+      }
+    }
     this.task={
       ...this.task,
-      id:this.tasks.length,
+      id:num,
       createdOn:this.date.toString(),
       status:"To-do",
     };
