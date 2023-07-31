@@ -58,9 +58,8 @@ export class DataEffects {
           if (tasksData) {
             tasks = JSON.parse(tasksData);
           }
-          const taskIndex = tasks.findIndex((task) => task.id == deltedTask.id);
-          tasks=tasks.filter((t)=>t.id!=taskIndex);
-          localStorage.setItem('data', JSON.stringify(tasks));
+          const newTasks=tasks.filter((t)=>t.id!=deltedTask.id);
+          localStorage.setItem('data', JSON.stringify(newTasks));
         })
       ),
     { dispatch: false }
